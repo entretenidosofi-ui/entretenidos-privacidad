@@ -24,7 +24,10 @@
     content: ""; position: fixed; inset: 0; z-index: -1;
     background: #3B2A6B url("fondo.jpg") center / cover no-repeat;
   }
-  p, li { overflow-wrap: break-word; }
+  /* Justificado, con guiones en español (lang="es") para que una columna angosta no deje huecos entre palabras. */
+  p, li { overflow-wrap: break-word; text-align: justify; hyphens: auto; -webkit-hyphens: auto;
+          hyphenate-limit-chars: 9 4 4; }   /* solo palabras largas, y nunca menos de 4 letras a cada lado */
+  .fecha { text-align: center; hyphens: none; }
   main { max-width: 760px; margin: 0 auto; padding: 22px 16px 48px; }
   .logo { display: block; width: min(420px, 82%); margin: 4px auto 14px; filter: drop-shadow(0 6px 10px rgba(0,0,0,.35)); }
   .tarjeta {
@@ -61,7 +64,8 @@
     h1 { font-size: 1.7rem; }
     .fecha { font-size: .82rem; margin-bottom: 14px; }
     .intro { background: none; padding: 0; border-radius: 0; }
-    h2 { font-size: 1.12rem; margin-top: 22px; }
+    /* El S24 muestra la página con 384 px de ancho: a 1.12rem «internet» quedaba sola abajo. */
+    h2 { font-size: clamp(.9rem, 4.15vw, 1.05rem); margin-top: 22px; }
     ul { padding-left: 18px; }
     .pastilla { padding: 10px 22px; border-width: 4px; }
   }
