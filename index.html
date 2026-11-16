@@ -5,74 +5,101 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Política de privacidad · Entretenidos</title>
 <meta name="description" content="Política de privacidad del juego Entretenidos, de desafiosvisuales.">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&family=Sigmar&display=swap" rel="stylesheet">
 <style>
+  /* Los colores del juego (scripts/Tema.gd): morado de los carteles, dorado de los botones, crema. */
   :root {
-    --fondo: #FFF8EC; --tarjeta: #FFFFFF; --tinta: #2B2140; --suave: #6B6380; --morado: #5B3CC4; --oro: #F2B327;
-    --linea: #EADFC8; color-scheme: light;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root { --fondo: #17131F; --tarjeta: #211B2D; --tinta: #EDE7F6; --suave: #A79DBB; --morado: #B9A3FF; --oro: #F2B327;
-      --linea: #33294A; color-scheme: dark; }
+    --morado: #7A4FD0; --morado-borde: #4A2D96; --oro: #FFC93C; --oro-borde: #E07A1A; --oro-texto: #B8410E;
+    --crema: #FFF3D0; --sombra: #2A1A4A;
   }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--fondo); color: var(--tinta); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 720px; margin: 0 auto; padding: 32px 16px 56px; }
-  header { border-bottom: 4px solid var(--oro); padding-bottom: 14px; margin-bottom: 8px; }
-  .marca { color: var(--morado); font-weight: 800; letter-spacing: .02em; font-size: .95rem; text-transform: uppercase; }
-  h1 { margin: 4px 0 6px; font-size: 1.9rem; line-height: 1.2; }
-  .fecha { color: var(--suave); margin: 0; font-size: .95rem; }
-  h2 { margin: 30px 0 8px; font-size: 1.2rem; color: var(--morado); }
+  html { background: #3B2A6B; }
+  body {
+    margin: 0; min-height: 100vh; color: #FFFFFF;
+    font: 600 17px/1.65 "Nunito", system-ui, sans-serif;
+    background: #3B2A6B url("fondo.jpg") center / cover fixed no-repeat;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 22px 16px 48px; }
+  .logo { display: block; width: min(420px, 82%); margin: 4px auto 14px; filter: drop-shadow(0 6px 10px rgba(0,0,0,.35)); }
+  .tarjeta {
+    background: var(--morado); border: 6px solid var(--morado-borde); border-radius: 36px;
+    padding: 26px 24px 30px; box-shadow: 0 10px 0 rgba(0,0,0,.18), 0 18px 40px rgba(0,0,0,.35);
+  }
+  h1, h2 { font-family: "Sigmar", "Nunito", system-ui, sans-serif; font-weight: 400; letter-spacing: .01em; }
+  h1 {
+    margin: 0 0 4px; text-align: center; font-size: clamp(1.8rem, 6vw, 2.5rem); line-height: 1.15; color: var(--crema);
+    text-shadow: 0 3px 0 var(--morado-borde), 0 0 2px var(--morado-borde);
+  }
+  .fecha { text-align: center; margin: 0 0 18px; color: #E4D9FF; font-size: .95rem; }
+  .intro { background: rgba(255,255,255,.10); border-radius: 18px; padding: 14px 16px; margin: 0 0 6px; }
+  h2 {
+    margin: 26px 0 8px; font-size: 1.3rem; color: var(--oro);
+    text-shadow: 0 2px 0 var(--oro-texto), 0 0 1px var(--oro-texto);
+  }
   p, li { margin: 0 0 12px; }
   ul { padding-left: 22px; }
-  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--linea); color: var(--suave); font-size: .9rem; }
+  li::marker { color: var(--oro); }
+  strong { color: var(--crema); font-weight: 900; }
+  .pastilla {
+    display: block; width: fit-content; margin: 28px auto 0; padding: 12px 26px; border-radius: 999px;
+    background: var(--oro); border: 5px solid var(--oro-borde); color: var(--oro-texto); font-weight: 900;
+    box-shadow: 0 5px 0 rgba(0,0,0,.25); text-align: center;
+  }
+  footer { margin-top: 22px; text-align: center; color: var(--crema); font-size: .9rem; text-shadow: 0 1px 3px rgba(0,0,0,.6); }
+  @media (max-width: 480px) { .tarjeta { padding: 22px 18px 26px; border-radius: 28px; } body { font-size: 16px; } }
 </style>
 </head>
 <body>
 <main>
-  <header>
-    <div class="marca">Entretenidos · desafiosvisuales</div>
+  <img class="logo" src="logo.png" alt="Entretenidos">
+  <section class="tarjeta">
     <h1>Política de privacidad</h1>
     <p class="fecha">Última actualización: 16 de noviembre de 2026</p>
-  </header>
 
-  <p>Entretenidos es un juego de adivinar palabras publicado por <strong>desafiosvisuales</strong> («nosotros»). Esta
-  política explica qué información usa el juego. La versión 1.0.0 está pensada para recopilar lo mínimo posible.</p>
+    <p class="intro">Entretenidos es un juego de adivinar palabras publicado por <strong>desafiosvisuales</strong>
+    («nosotros»). Esta política explica qué información usa el juego. La versión 1.0.0 está pensada para recopilar lo
+    mínimo posible.</p>
 
-  <h2>1. Lo que se guarda en tu teléfono</h2>
-  <p>Tu progreso (niveles resueltos, estrellas, monedas, cartas, avatar y escenario elegidos) y tus ajustes (música,
-  efectos, vibración) se guardan <strong>solo en tu teléfono</strong>. No los enviamos a ningún servidor. Si
-  desinstalas el juego, se borran.</p>
+    <h2>1. Lo que se guarda en tu teléfono</h2>
+    <p>Tu progreso (niveles resueltos, estrellas, monedas, cartas, avatar y escenario elegidos) y tus ajustes (música,
+    efectos, vibración) se guardan <strong>solo en tu teléfono</strong>. No los enviamos a ningún servidor. Si
+    desinstalas el juego, se borran.</p>
 
-  <h2>2. Lo que el juego pide por internet</h2>
-  <p>Para tener niveles nuevos sin actualizar la app, el juego descarga una <strong>lista de niveles y sus
-  imágenes</strong> desde nuestro servidor, alojado en <strong>Cloudflare</strong>. Ese pedido <strong>no incluye
-  datos personales ni identificadores</strong> tuyos ni de tu teléfono. Como en cualquier conexión a internet, el
-  servidor recibe tu dirección IP para poder entregarte el archivo; no la usamos para identificarte ni la asociamos a
-  ningún otro dato. Las conexiones van cifradas (HTTPS).</p>
+    <h2>2. Lo que el juego pide por internet</h2>
+    <p>Para tener niveles nuevos sin actualizar la app, el juego descarga una <strong>lista de niveles y sus
+    imágenes</strong> desde nuestro servidor, alojado en <strong>Cloudflare</strong>. Ese pedido <strong>no incluye
+    datos personales ni identificadores</strong> tuyos ni de tu teléfono. Como en cualquier conexión a internet, el
+    servidor recibe tu dirección IP para poder entregarte el archivo; no la usamos para identificarte ni la asociamos
+    a ningún otro dato. Las conexiones van cifradas (HTTPS).</p>
 
-  <h2>3. Lo que NO hacemos</h2>
-  <ul>
-    <li>No pedimos que crees una cuenta ni que ingreses tu nombre, correo o teléfono.</li>
-    <li>No usamos tu ubicación, contactos, cámara, micrófono ni fotos.</li>
-    <li>No mostramos publicidad ni hacemos compras dentro del juego en esta versión.</li>
-    <li>No vendemos ni compartimos información con terceros.</li>
-  </ul>
-  <p>Los nombres que se escriben en el <strong>multijugador</strong> quedan solo en el teléfono durante esa
-  partida.</p>
-  <p>Al <strong>descargar un escenario</strong> como fondo de pantalla, el juego guarda la imagen en la carpeta de
-  descargas de tu teléfono (Descargas › Entretenidos), donde la galería la muestra. No sube nada.</p>
+    <h2>3. Lo que NO hacemos</h2>
+    <ul>
+      <li>No pedimos que crees una cuenta ni que ingreses tu nombre, correo o teléfono.</li>
+      <li>No usamos tu ubicación, contactos, cámara, micrófono ni fotos.</li>
+      <li>No mostramos publicidad ni hacemos compras dentro del juego en esta versión.</li>
+      <li>No vendemos ni compartimos información con terceros.</li>
+    </ul>
+    <p>Los nombres que se escriben en el <strong>multijugador</strong> quedan solo en el teléfono durante esa
+    partida.</p>
+    <p>Al <strong>descargar un escenario</strong> como fondo de pantalla, el juego guarda la imagen en la carpeta de
+    descargas de tu teléfono (Descargas › Entretenidos), donde la galería la muestra. No sube nada.</p>
 
-  <h2>4. Cambios futuros</h2>
-  <p>Si más adelante el juego incorpora anuncios, compras o inicio de sesión con Google, actualizaremos esta política
-  <strong>antes</strong> de esa versión y explicaremos qué datos se usan y para qué.</p>
+    <h2>4. Cambios futuros</h2>
+    <p>Si más adelante el juego incorpora anuncios, compras o inicio de sesión con Google, actualizaremos esta
+    política <strong>antes</strong> de esa versión y explicaremos qué datos se usan y para qué.</p>
 
-  <h2>5. Niños</h2>
-  <p>El juego no está dirigido especialmente a menores de 13 años y no recopila datos personales de nadie.</p>
+    <h2>5. Niños</h2>
+    <p>El juego no está dirigido especialmente a menores de 13 años y no recopila datos personales de nadie.</p>
 
-  <h2>6. Contacto</h2>
-  <p>Si tienes preguntas sobre esta política, escríbenos al correo de contacto que figura en la ficha de
-  Entretenidos en Google Play.</p>
+    <h2>6. Contacto</h2>
+    <p>Si tienes preguntas sobre esta política, escríbenos al correo de contacto que figura en la ficha de
+    Entretenidos en Google Play.</p>
 
+    <span class="pastilla">¡Gracias por jugar!</span>
+  </section>
   <footer>© 2026 desafiosvisuales · Entretenidos</footer>
 </main>
 </body>
